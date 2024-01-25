@@ -9,9 +9,7 @@ const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swaggerConfig_1 = __importDefault(require("./api/swaggerConfig"));
 const sequelizeInstance_1 = __importDefault(require("./src/config/sequelizeInstance"));
 // Configuration CORS
-const corsOptions = process.env.NODE_ENV === 'production' ?
-    { origin: "http://localhost:3000/" } :
-    { origin: '*' };
+const corsOptions = { origin: '*' };
 sequelizeInstance_1.default.sync({ alter: true });
 const body_parser_1 = __importDefault(require("body-parser"));
 const salleRouter_1 = __importDefault(require("./src/routes/salleRouter"));
