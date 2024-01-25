@@ -13,7 +13,7 @@
  *           type: string
  *           format: date-time
  *         film:
- *           type: string
+ *           type: integer
  *         salleId:
  *           type: integer
  *       example:
