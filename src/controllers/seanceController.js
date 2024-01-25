@@ -14,7 +14,6 @@ const Seance_1 = require("../models/Seance");
 const createSeance = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const seance = yield Seance_1.Seance.create(req.body);
-        res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
         res.status(201).json(seance);
     }
     catch (error) {
@@ -25,7 +24,6 @@ exports.createSeance = createSeance;
 const getAllSeances = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const seances = yield Seance_1.Seance.findAll();
-        res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
         res.json(seances);
     }
     catch (error) {
@@ -37,7 +35,6 @@ const getSeanceById = (req, res) => __awaiter(void 0, void 0, void 0, function* 
     try {
         const seance = yield Seance_1.Seance.findByPk(req.params.id);
         if (seance) {
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.json(seance);
         }
         else {
@@ -54,7 +51,6 @@ const updateSeance = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const seance = yield Seance_1.Seance.findByPk(req.params.id);
         if (seance) {
             yield seance.update(req.body);
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.json(seance);
         }
         else {
@@ -71,7 +67,6 @@ const deleteSeance = (req, res) => __awaiter(void 0, void 0, void 0, function* (
         const seance = yield Seance_1.Seance.findByPk(req.params.id);
         if (seance) {
             yield seance.destroy();
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.status(204).send();
         }
         else {

@@ -14,7 +14,6 @@ const Salle_1 = require("../models/Salle");
 const createSalle = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const salle = yield Salle_1.Salle.create(req.body);
-        res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
         res.status(201).json(salle);
     }
     catch (error) {
@@ -25,7 +24,6 @@ exports.createSalle = createSalle;
 const getAllSalles = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const salles = yield Salle_1.Salle.findAll();
-        res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
         res.json(salles);
     }
     catch (error) {
@@ -37,7 +35,6 @@ const getSalleById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     try {
         const salle = yield Salle_1.Salle.findByPk(req.params.id);
         if (salle) {
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.json(salle);
         }
         else {
@@ -54,7 +51,6 @@ const updateSalle = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const salle = yield Salle_1.Salle.findByPk(req.params.id);
         if (salle) {
             yield salle.update(req.body);
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.json(salle);
         }
         else {
@@ -71,7 +67,6 @@ const deleteSalle = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const salle = yield Salle_1.Salle.findByPk(req.params.id);
         if (salle) {
             yield salle.destroy();
-            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.status(204).send();
         }
         else {

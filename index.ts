@@ -1,7 +1,13 @@
 import express, { Express, Request, Response } from 'express';
+import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './api/swaggerConfig';
 import sequelize from './src/config/sequelizeInstance';
+
+// Configuration CORS
+const corsOptions = process.env.NODE_ENV === 'production' ? 
+  { origin: "http://localhost:3000/" } : 
+  { origin: '*' };
 
 sequelize.sync({ alter: true });
 
@@ -13,6 +19,7 @@ import tarifRouter from './src/routes/tarifRouter';
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
+app.use(cors(corsOptions)); // Utilisation des options CORS
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(bodyParser.json());
@@ -21,7 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/salles', salleRouter);
 app.use('/seances', seanceRouter);
 app.use('/tarifs', tarifRouter);
-
 
 app.get('/', (req: Request, res: Response) => {
   res.redirect('/api-docs');
