@@ -1,5 +1,3 @@
-Création d'une documentation pour votre projet API REST en Node.js :
-
 ### Documentation du Projet : API de Gestion de Cinéma
 
 #### Description Générale
@@ -30,7 +28,7 @@ L'API de gestion de cinéma permet de gérer les salles, les séances et les tar
 
 #### Tests avec Postman
 Pour tester ces endpoints avec Postman :
-1. Lancez votre API localement, ou avec le lien : https://seance-api-service.onrender.com/salles
+1. Lancez votre API localement, ou avec le lien : [CinémaSeanceAPi](https://seance-api-service.onrender.com/api-docs)
 2. Ouvrez Postman et configurez une nouvelle requête pour l'endpoint souhaité.
 3. Choisissez la méthode appropriée (GET, POST, etc.) et ajoutez les données nécessaires dans le corps de la requête pour les méthodes POST et PUT.
 4. Envoyez la requête et analysez la réponse.
