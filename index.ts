@@ -1,14 +1,14 @@
 import express, { Express, Request, Response } from 'express';
-import sequelize from './config/sequelizeInstance';
+import sequelize from './src/config/sequelizeInstance';
 
 
 sequelize.sync({alter: true});
 
 
 import bodyParser from 'body-parser';
-import salleRouter from './routes/salleRouter';
-import seanceRouter from './routes/seanceRouter';
-import tarifRouter from './routes/tarifRouter';
+import salleRouter from './src/routes/salleRouter';
+import seanceRouter from './src/routes/seanceRouter';
+import tarifRouter from './src/routes/tarifRouter';
 
 const app: Express = express();
 const port = process.env.PORT || 3000;

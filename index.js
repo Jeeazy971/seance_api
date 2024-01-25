@@ -4,12 +4,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const sequelizeInstance_1 = __importDefault(require("./config/sequelizeInstance"));
+const sequelizeInstance_1 = __importDefault(require("./src/config/sequelizeInstance"));
 sequelizeInstance_1.default.sync({ alter: true });
 const body_parser_1 = __importDefault(require("body-parser"));
-const salleRouter_1 = __importDefault(require("./routes/salleRouter"));
-const seanceRouter_1 = __importDefault(require("./routes/seanceRouter"));
-const tarifRouter_1 = __importDefault(require("./routes/tarifRouter"));
+const salleRouter_1 = __importDefault(require("./src/routes/salleRouter"));
+const seanceRouter_1 = __importDefault(require("./src/routes/seanceRouter"));
+const tarifRouter_1 = __importDefault(require("./src/routes/tarifRouter"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
 app.use(body_parser_1.default.json());
