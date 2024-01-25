@@ -7,19 +7,19 @@
  *       type: object
  *       required:
  *         - dateHeure
- *         - film
+ *         - filmId
  *         - salleId
  *       properties:
  *         dateHeure:
  *           type: string
  *           format: date-time
- *         film:
+ *         filmId:
  *           type: integer
  *         salleId:
  *           type: integer
  *       example:
  *         dateHeure: "2023-04-01T19:00:00.000Z"
- *         film: "Film C"
+ *         filmId: 1
  *         salleId: 1
  *
  * /seances:
