@@ -17,7 +17,7 @@ import tarifRouter from './src/routes/tarifRouter';
 const app: Express = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors(corsOptions)); // Utilisation des options CORS
+app.use(cors()); // Utilisation des options CORS
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(bodyParser.json());
