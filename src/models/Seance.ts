@@ -11,7 +11,7 @@ export class Seance extends Model {
 
 Seance.init({
   dateHeure: DataTypes.DATE,
-  film: DataTypes.INTEGER,
+  filmId: DataTypes.INTEGER,
   salleId: DataTypes.INTEGER,
 }, {
   sequelize,
