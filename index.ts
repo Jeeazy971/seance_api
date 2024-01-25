@@ -5,9 +5,7 @@ import swaggerDocument from './api/swaggerConfig';
 import sequelize from './src/config/sequelizeInstance';
 
 // Configuration CORS
-const corsOptions = process.env.NODE_ENV === 'production' ? 
-  { origin: "http://localhost:3000/" } : 
-  { origin: '*' };
+const corsOptions = { origin: '*' };
 
 sequelize.sync({ alter: true });
 
