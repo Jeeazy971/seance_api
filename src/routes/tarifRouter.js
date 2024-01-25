@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const tarifController_1 = require("../controllers/tarifController");
+const router = (0, express_1.Router)();
+router.get('/', tarifController_1.getAllTarifs);
+router.get('/:id', tarifController_1.getTarifById);
+router.post('/', tarifController_1.createTarif);
+router.put('/:id', tarifController_1.updateTarif);
+router.delete('/:id', tarifController_1.deleteTarif);
+exports.default = router;
