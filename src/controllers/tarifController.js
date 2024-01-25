@@ -14,6 +14,7 @@ const Tarif_1 = require("../models/Tarif");
 const createTarif = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const tarif = yield Tarif_1.Tarif.create(req.body);
+        res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
         res.status(201).json(tarif);
     }
     catch (error) {
@@ -24,6 +25,7 @@ exports.createTarif = createTarif;
 const getAllTarifs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const tarifs = yield Tarif_1.Tarif.findAll();
+        res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
         res.json(tarifs);
     }
     catch (error) {
@@ -35,6 +37,7 @@ const getTarifById = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     try {
         const tarif = yield Tarif_1.Tarif.findByPk(req.params.id);
         if (tarif) {
+            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.json(tarif);
         }
         else {
@@ -51,6 +54,7 @@ const updateTarif = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const tarif = yield Tarif_1.Tarif.findByPk(req.params.id);
         if (tarif) {
             yield tarif.update(req.body);
+            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.json(tarif);
         }
         else {
@@ -67,6 +71,7 @@ const deleteTarif = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
         const tarif = yield Tarif_1.Tarif.findByPk(req.params.id);
         if (tarif) {
             yield tarif.destroy();
+            res.header('Access-Control-Allow-Origin', 'http://localhost:3000/');
             res.status(204).send();
         }
         else {
