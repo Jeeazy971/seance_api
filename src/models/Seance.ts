@@ -4,14 +4,14 @@ import sequelize from '../config/sequelizeInstance';
 export class Seance extends Model {
   public id!: number;
   public dateHeure!: Date;
-  public film!: number;
+  public filmId!: number;
   public salleId!: number;
 
 }
 
 Seance.init({
   dateHeure: DataTypes.DATE,
-  film: DataTypes.STRING,
+  film: DataTypes.INTEGER,
   salleId: DataTypes.INTEGER,
 }, {
   sequelize,
