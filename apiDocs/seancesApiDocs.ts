@@ -1,5 +1,26 @@
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     Seance:
+ *       type: object
+ *       required:
+ *         - dateHeure
+ *         - film
+ *         - salleId
+ *       properties:
+ *         dateHeure:
+ *           type: string
+ *           format: date-time
+ *         film:
+ *           type: string
+ *         salleId:
+ *           type: integer
+ *       example:
+ *         dateHeure: "2023-04-01T19:00:00.000Z"
+ *         film: "Film C"
+ *         salleId: 1
+ * 
  * /seances:
  *   get:
  *     summary: Liste de toutes les séances

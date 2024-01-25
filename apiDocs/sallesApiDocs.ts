@@ -1,5 +1,21 @@
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     Salle:
+ *       type: object
+ *       required:
+ *         - nom
+ *         - capacite
+ *       properties:
+ *         nom:
+ *           type: string
+ *         capacite:
+ *           type: integer
+ *       example:
+ *         nom: "Salle 1"
+ *         capacite: 120
+ * 
  * /salles:
  *   get:
  *     summary: Liste de toutes les salles

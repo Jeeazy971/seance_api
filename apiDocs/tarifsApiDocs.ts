@@ -1,5 +1,21 @@
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     Tarif:
+ *       type: object
+ *       required:
+ *         - type
+ *         - prix
+ *       properties:
+ *         type:
+ *           type: string
+ *         prix:
+ *           type: number
+ *       example:
+ *         type: "Adulte"
+ *         prix: 10.00
+ * 
  * /tarifs:
  *   get:
  *     summary: Liste de tous les tarifs
