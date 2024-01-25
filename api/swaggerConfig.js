@@ -13,7 +13,6 @@ const options = {
             description: 'Une API pour gérer les salles, les séances et les tarifs de cinéma',
         },
     },
-    //   apis: ['.src/routes/*.ts'],
     apis: ['./apiDocs/*.ts'],
 };
 const openapiSpecification = (0, swagger_jsdoc_1.default)(options);

@@ -17,7 +17,7 @@ const seanceRouter_1 = __importDefault(require("./src/routes/seanceRouter"));
 const tarifRouter_1 = __importDefault(require("./src/routes/tarifRouter"));
 const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
-app.use((0, cors_1.default)(corsOptions)); // Utilisation des options CORS
+app.use((0, cors_1.default)()); // Utilisation des options CORS
 app.use('/api-docs', swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerConfig_1.default));
 app.use(body_parser_1.default.json());
 app.use(body_parser_1.default.urlencoded({ extended: true }));

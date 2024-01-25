@@ -9,7 +9,6 @@ const options: swaggerJsdoc.Options = {
       description: 'Une API pour gérer les salles, les séances et les tarifs de cinéma',
     },
   },
-//   apis: ['.src/routes/*.ts'],
   apis: ['./apiDocs/*.ts'],
 };
 

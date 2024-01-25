@@ -4,7 +4,7 @@ import sequelize from '../config/sequelizeInstance';
 export class Seance extends Model {
   public id!: number;
   public dateHeure!: Date;
-  public film!: string;
+  public film!: number;
   public salleId!: number;
 
 }
