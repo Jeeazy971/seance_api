@@ -1,19 +1,21 @@
 import { Model, DataTypes } from 'sequelize';
-import sequelize from '../config/sequelizeInstance';
+import sequelize from '../../config/sequelizeInstance';
 
 export class Seance extends Model {
-  public id!: number;
-  public dateHeure!: Date;
-  public filmId!: number;
-  public salleId!: number;
-
+    public id!: number;
+    public dateHeure!: Date;
+    public filmId!: number;
+    public salleId!: number;
 }
 
-Seance.init({
-  dateHeure: DataTypes.DATE,
-  filmId: DataTypes.INTEGER,
-  salleId: DataTypes.INTEGER,
-}, {
-  sequelize,
-  tableName: 'seances'
-});
+Seance.init(
+    {
+        dateHeure: DataTypes.DATE,
+        filmId: DataTypes.INTEGER,
+        salleId: DataTypes.INTEGER,
+    },
+    {
+        sequelize,
+        tableName: 'seances',
+    },
+);

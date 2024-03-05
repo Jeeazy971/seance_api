@@ -1,9 +1,23 @@
-// Importation des modules 
+import * as dotenv from 'dotenv';
+
+// Déterminer l'environnement et charger le fichier .env correspondant
+switch (process.env.NODE_ENV) {
+    case 'test':
+        dotenv.config({ path: '.env.test' });
+        break;
+    case 'production':
+        dotenv.config({ path: '.env.production' });
+        break;
+    default:
+        dotenv.config({ path: '.env.development' });
+}
+
+// Importation des modules
 import express, { Express, Request, Response } from 'express';
 import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './api/swaggerConfig';
-import sequelize from './src/config/sequelizeInstance';
+import sequelize from './config/sequelizeInstance';
 
 // Synchronisation de Sequelize avec la base de données
 sequelize.sync({ alter: true });
@@ -16,13 +30,12 @@ import salleRouter from './src/routes/salleRouter';
 import seanceRouter from './src/routes/seanceRouter';
 import tarifRouter from './src/routes/tarifRouter';
 
-
 const app: Express = express();
 
 const port = process.env.PORT || 3000;
 
 // Utilisation de CORS pour gérer les requêtes cross-origin
-app.use(cors()); 
+app.use(cors());
 
 // Configuration de Swagger UI pour la documentation de l'API
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
@@ -38,10 +51,12 @@ app.use('/tarifs', tarifRouter);
 
 // Route racine redirigeant vers la documentation Swagger
 app.get('/', (req: Request, res: Response) => {
-  res.redirect('/api-docs');
+    res.redirect('/api-docs');
 });
 
 // Démarrage du serveur
 app.listen(port, () => {
-  console.log(`Serveur lancé sur http://localhost:${port}`);
+    console.log(`Serveur lancé sur http://localhost:${port}`);
 });
+
+export default app;
